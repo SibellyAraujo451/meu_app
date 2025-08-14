@@ -1,0 +1,32 @@
+<h1>Lista de Usuários</h1>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Idade</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.age %></td>
+
+        <td>
+          <%= link_to "Editar", edit_user_path(user) %> 
+        </td>
+      </tr>
+      
+    <% end %>
+
+    <div class="actions-top">
+       <%= link_to "Adicionar Usuário", new_user_path, class: "btn btn-add" %>
+    </div>
+    
+  </tbody>
+</table>

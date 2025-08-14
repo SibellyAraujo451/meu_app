@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MeuApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <%= link_to "Início", root_path %> 
+      </nav>
+    </header>
+
+    <main>
+      <% if notice %>
+        <p style="color: green;"><%= notice %></p>
+      <% end %>
+      
+      <% if alert %>
+        <p style="color: red;"><%= alert %></p>
+      <% end %>
+
+      <%= yield %>
+    </main>
+
+    <footer>
+      <p>©Direitos autorais reservados</p>
+    </footer>
+  </body>
+</html>
