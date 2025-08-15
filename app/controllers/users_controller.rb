@@ -41,12 +41,11 @@ class UsersController < ApplicationController
 
   private
 
-  # Carrega o usuário baseado no ID da URL
   def set_user
     @user = User.find(params[:id])
   end
 
-  # Define os parâmetros permitidos do formulário
+
   def user_params
     params.require(:user).permit(:name, :email, :age)
   end
